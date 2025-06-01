@@ -1,0 +1,68 @@
+name: hoteli
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_native_splash: 2.4.4
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.4
+  persistent_bottom_nav_bar: ^6.2.1
+  intl: ^0.19.0
+  carousel_slider: ^5.0.0
+  persian_datetime_picker: ^2.7.0
+  flutter_localization: ^0.3.2
+  image_picker: ^1.1.2
+  
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.3
+  flutter_lints: ^4.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/hoteli.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icons/hoteli.png"
+    background_color: "#FFFFFF" # Replace with your desired hex code
+    theme_color: "#FFFFFF" # Replace with your desired hex code
+  windows:
+    generate: true
+    image_path: "assets/icons/hoteli.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icons/hoteli.png"
+
+flutter_native_splash:
+  image: assets/images/hoteli.png
+  color: "#292929"
+  android_gravity: center
+  fullscreen: true
+  android_12:
+    image: assets/images/hoteli.png
+    color: "#292929"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/data/hotels.json
+    
+fonts:
+  - family: sahel
+    fonts:
+      - assets: assets/font/sahel.ttf

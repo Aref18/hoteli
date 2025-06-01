@@ -1,0 +1,30 @@
+{
+  "he":[
+  {
+    "first_name" : "aref" ,
+    "last_name" : "msv" , 
+    "person_age" : 25 , 
+    "cars" : ["tara" , "shahin" , "pejo"] , 
+    "habits" : ["html" , "css" , "dart" , "flutter" , "golang" ] ,
+    "madral" : {
+        "madrak" : "lisans" , 
+        "moadel" : 15.5 , 
+       "degree" : "biomedical" 
+    }
+}  
+] , 
+"she":[
+{
+    "first_name" : "fafa" , 
+    "last_name" : "grb" , 
+    "person_age" : 23 ,
+    "cars":null,
+    "habits" : ["reading" , "cleaning" ,"eating" , "sleeping"],
+    "madrak" :{
+        "degree" : "nurse",
+        "moadel" : 17,
+        "madrak" : "lisanse"
+    }
+ }
+]
+}
