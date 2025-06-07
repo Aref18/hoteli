@@ -8,66 +8,80 @@ import 'package:hoteli/features/home/presentation/widgets/searchbar.dart';
 import 'package:hoteli/features/home/presentation/widgets/story_carousel.dart';
 import 'package:provider/provider.dart';
 
-class homeScreen extends StatelessWidget {
-  const homeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final homeProvider = Provider.of<HomeProvider>(context);
+
     return Scaffold(
-      appBar: HomeAppbar(),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            SizedBox(
-              height: 16,
+      body: CustomScrollView(
+        slivers: [
+          // Use SliverAppBar with your custom AppBar widget
+          SliverAppBar(
+            pinned: true,
+            floating: false,
+            expandedHeight: 80.0,
+            backgroundColor: Colors.white,
+            flexibleSpace: FlexibleSpaceBar(
+              background: HomeAppbar(),
             ),
-            Searchbar(),
-            SizedBox(
-              height: 32,
-            ),
-            AdBanner(),
-            SizedBox(
-              height: 16,
-            ),
-            Consumer<HomeProvider>(
-              builder: (context, HomeProvider, child) {
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 16)),
+
+          SliverToBoxAdapter(child: Searchbar()),
+          SliverToBoxAdapter(child: SizedBox(height: 32)),
+
+          SliverToBoxAdapter(child: AdBanner()),
+          SliverToBoxAdapter(child: SizedBox(height: 16)),
+
+          SliverToBoxAdapter(
+            child: Consumer<HomeProvider>(
+              builder: (context, homeProvider, child) {
                 return HotelListSections(
                   title: "پیشنهاد امروز",
-                  hotels: HomeProvider.GetPopluarHotels(),
+                  hotels: homeProvider.GetPopluarHotels(),
                   onseeAllPressed: () {},
                 );
               },
             ),
-            Consumer<HomeProvider>(
-              builder: (context, HomeProvider, child) {
+          ),
+          SliverToBoxAdapter(
+            child: Consumer<HomeProvider>(
+              builder: (context, homeProvider, child) {
                 return HotelListSections(
                   title: "مجبوب ترین هتل ها",
-                  hotels: HomeProvider.GetSpeciaSpecialOfferHotels(),
+                  hotels: homeProvider.GetSpeciaSpecialOfferHotels(),
                   onseeAllPressed: () {},
                 );
               },
             ),
-            SizedBox(
-              height: 16,
-            ),
-            Consumer<HomeProvider>(
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 16)),
+
+          SliverToBoxAdapter(
+            child: Consumer<HomeProvider>(
               builder: (context, homeProvider, child) {
                 return StoryCarousel(
-                    images: homeProvider.GetStoryImages(),
-                    titles: homeProvider.storytext);
+                  images: homeProvider.GetStoryImages(),
+                  titles: homeProvider.storytext,
+                );
               },
             ),
-            Consumer<HomeProvider>(
+          ),
+          SliverToBoxAdapter(
+            child: Consumer<HomeProvider>(
               builder: (context, homeProvider, child) {
                 return HotelVerticalList(
-                    title: "جدیدترین هتل‌ها",
-                    hotels: homeProvider.GetNewestHotels());
+                  title: "جدیدترین هتل‌ها",
+                  hotels: homeProvider.GetNewestHotels(),
+                );
               },
             ),
-          ],
-        ),
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 32)),
+        ],
       ),
     );
   }

@@ -26,7 +26,7 @@ class _MianNavigationbarState extends State<MianNavigationbar> {
 
   _builscreens() {
     return [
-      const homeScreen(),
+      const HomeScreen(),
       const FavoritePage(),
       BookingPage(),
       const ProfilePage(),
