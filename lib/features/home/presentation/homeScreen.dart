@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hoteli/features/home/presentation/provider/home_provider.dart';
 import 'package:hoteli/features/home/presentation/widgets/ad_banner.dart';
@@ -8,8 +9,8 @@ import 'package:hoteli/features/home/presentation/widgets/searchbar.dart';
 import 'package:hoteli/features/home/presentation/widgets/story_carousel.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class homeScreen extends StatelessWidget {
+  const homeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,22 +20,21 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           // Use SliverAppBar with your custom AppBar widget
-          SliverAppBar(
-            pinned: true,
+          const SliverAppBar(
+            pinned: false,
             floating: false,
             expandedHeight: 80.0,
-            backgroundColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
               background: HomeAppbar(),
             ),
           ),
-          SliverToBoxAdapter(child: SizedBox(height: 16)),
+          const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
-          SliverToBoxAdapter(child: Searchbar()),
-          SliverToBoxAdapter(child: SizedBox(height: 32)),
+          const SliverToBoxAdapter(child: Searchbar()),
+          const SliverToBoxAdapter(child: SizedBox(height: 32)),
 
-          SliverToBoxAdapter(child: AdBanner()),
-          SliverToBoxAdapter(child: SizedBox(height: 16)),
+          const SliverToBoxAdapter(child: AdBanner()),
+          const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
           SliverToBoxAdapter(
             child: Consumer<HomeProvider>(
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
               },
             ),
           ),
-          SliverToBoxAdapter(child: SizedBox(height: 16)),
+          const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
           SliverToBoxAdapter(
             child: Consumer<HomeProvider>(
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
               },
             ),
           ),
-          SliverToBoxAdapter(child: SizedBox(height: 32)),
+          const SliverToBoxAdapter(child: SizedBox(height: 32)),
         ],
       ),
     );

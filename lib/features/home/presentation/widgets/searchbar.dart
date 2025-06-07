@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hoteli/features/home/presentation/widgets/sort_filter.dart';
 
-class Searchbar extends StatelessWidget {
+class Searchbar extends StatefulWidget {
   const Searchbar({super.key});
+
+  @override
+  State<Searchbar> createState() => _SearchbarState();
+}
+
+class _SearchbarState extends State<Searchbar> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -14,10 +21,7 @@ class Searchbar extends StatelessWidget {
         ),
         child: Row(
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.tune),
-            ),
+            SortFilter(),
             SizedBox(
               height: 30,
               child: VerticalDivider(
