@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hoteli/core/utils/network.dart';
 import 'package:hoteli/features/home/data/models/hotel.dart';
 import 'package:hoteli/features/home/data/repositories/hotel_repositories.dart';
 import 'package:hoteli/shared/services/jason_data_service.dart';
@@ -23,13 +24,23 @@ class HotelDetailPage extends StatelessWidget {
           );
         }
         final hotel = snapshot.data!;
-        return const Scaffold(
+        return Scaffold(
           body: CustomScrollView(
             slivers: [
               SliverAppBar(
                 floating: true,
                 pinned: false,
-                actions: [],
+                flexibleSpace: FlexibleSpaceBar(
+                  background: GestureDetector(
+                    child: Image.network(
+                      fit: BoxFit.cover,
+                      networkUrl(hotel.images.first),
+                    ),
+                    onLongPress: () {},
+                  ),
+                  title: Text(hotel.name),
+                ),
+                actions: const [],
               ),
             ],
           ),
