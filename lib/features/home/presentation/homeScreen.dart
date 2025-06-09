@@ -28,13 +28,23 @@ class homeScreen extends StatelessWidget {
               background: HomeAppbar(),
             ),
           ),
-          const SliverToBoxAdapter(child: SizedBox(height: 16)),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 16),
+          ),
 
-          const SliverToBoxAdapter(child: Searchbar()),
-          const SliverToBoxAdapter(child: SizedBox(height: 32)),
+          const SliverToBoxAdapter(
+            child: Searchbar(),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 32),
+          ),
 
-          const SliverToBoxAdapter(child: AdBanner()),
-          const SliverToBoxAdapter(child: SizedBox(height: 16)),
+          const SliverToBoxAdapter(
+            child: AdBanner(),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 16),
+          ),
 
           SliverToBoxAdapter(
             child: Consumer<HomeProvider>(
