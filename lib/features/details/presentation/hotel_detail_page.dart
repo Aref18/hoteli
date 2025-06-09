@@ -69,7 +69,7 @@ class HotelDetailPage extends StatelessWidget {
                         children: [
                           Text(
                             hotel.address,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
@@ -80,6 +80,65 @@ class HotelDetailPage extends StatelessWidget {
                             size: 18,
                           ),
                         ],
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      Text(
+                        "امکانات رفاهی",
+                        style: textTheme.headlineLarge,
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Wrap(
+                        spacing: 14,
+                        children: hotel.amenities.map<Widget>((a) {
+                          IconData icon;
+                          switch (a) {
+                            case 'ساحل':
+                              icon = Icons.beach_access;
+                              break;
+                            case 'کافه':
+                              icon = Icons.coffee_sharp;
+                              break;
+                            case 'رستوران':
+                              icon = Icons.restaurant_menu;
+                              break;
+                            case 'استخر':
+                              icon = Icons.pool;
+                              break;
+                            case 'باشگاه':
+                              icon = Icons.sports_gymnastics;
+                              break;
+                            case 'کولر':
+                              icon = Icons.ac_unit;
+                              break;
+                            default:
+                              icon = Icons.circle;
+                          }
+
+                          return Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Icon(icon, size: 30, color: Colors.grey),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                a,
+                                style: textTheme.bodySmall!
+                                    .copyWith(color: Colors.black87),
+                                textDirection: TextDirection.rtl,
+                              ),
+                            ],
+                          );
+                        }).toList(), // <- تبدیل به لیست
                       )
                     ],
                   ),
