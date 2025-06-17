@@ -179,7 +179,22 @@ class HotelDetailPage extends StatelessWidget {
                             );
                           },
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'توضیحات ',
+                        style: textTheme.headlineSmall,
+                        textDirection: TextDirection.rtl,
+                      ),
+                      Text(
+                        hotel.description,
+                        style: textTheme.bodyLarge!.copyWith(height: 1.5),
+                        textDirection: TextDirection.rtl,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 8,
+                      ),
                     ],
                   ),
                 ),
