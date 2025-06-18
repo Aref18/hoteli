@@ -1,6 +1,6 @@
 name: hoteli
 description: "A new Flutter project."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' 
 
 version: 1.0.0+1
 
@@ -19,6 +19,8 @@ dependencies:
   persian_datetime_picker: ^2.7.0
   flutter_localization: ^0.3.2
   image_picker: ^1.1.2
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
   
 
 

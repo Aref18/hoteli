@@ -142,7 +142,7 @@ class BookingPageState extends State<BookingPage> {
                       }
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   TermsWidget(
@@ -161,7 +161,7 @@ class BookingPageState extends State<BookingPage> {
                         onPressed: () {
                           if (_formkey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
+                              const SnackBar(
                                 content: Text(
                                   'درخواست رزرو شما با موفقیت انجام شد',
                                   textDirection: TextDirection.rtl,
@@ -170,7 +170,7 @@ class BookingPageState extends State<BookingPage> {
                             );
                           }
                         },
-                        child: Text('درخواست رزو هتل')),
+                        child: const Text('درخواست رزو هتل')),
                   ),
                 ],
               ),

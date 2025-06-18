@@ -180,7 +180,7 @@ class HotelDetailPage extends StatelessWidget {
                           },
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Text(
@@ -194,6 +194,26 @@ class HotelDetailPage extends StatelessWidget {
                         textDirection: TextDirection.rtl,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 8,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        textDirection: TextDirection.rtl,
+                        children: [
+                          Text(
+                            "موقعیت مکانیه هتل روی نقشه",
+                            style: textTheme.headlineMedium,
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              "تمام صفحه ",
+                              style: TextStyle(color: Colors.red, fontSize: 19),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 8,
                       ),
                     ],
                   ),
