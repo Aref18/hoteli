@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:hoteli/core/utils/network.dart';
+import 'package:hoteli/features/details/presentation/fullscreen_map.dart';
 import 'package:hoteli/features/home/data/models/hotel.dart';
 import 'package:hoteli/features/home/data/repositories/hotel_repositories.dart';
 import 'package:hoteli/shared/services/jason_data_service.dart';
@@ -206,7 +207,16 @@ class HotelDetailPage extends StatelessWidget {
                             style: textTheme.headlineMedium,
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              PersistentNavBarNavigator.pushNewScreen(context,
+                                  screen: FullscreenMap(
+                                      latitude: hotel.location.latitude,
+                                      longitude: hotel.location.longitude,
+                                      hotelName: hotel.name),
+                                  withNavBar: false,
+                                  pageTransitionAnimation:
+                                      PageTransitionAnimation.cupertino);
+                            },
                             child: const Text(
                               "تمام صفحه ",
                               style: TextStyle(color: Colors.red, fontSize: 19),
@@ -252,7 +262,7 @@ class HotelDetailPage extends StatelessWidget {
                                           size: 40,
                                         ),
                                         Container(
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                               horizontal: 4, vertical: 2),
                                           color: Colors.white.withOpacity(0.8),
                                           child: Text(
@@ -274,7 +284,7 @@ class HotelDetailPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       )
                     ],
