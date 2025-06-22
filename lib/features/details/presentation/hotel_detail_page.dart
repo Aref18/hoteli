@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:hoteli/core/utils/network.dart';
 import 'package:hoteli/features/home/data/models/hotel.dart';
 import 'package:hoteli/features/home/data/repositories/hotel_repositories.dart';
 import 'package:hoteli/shared/services/jason_data_service.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class HotelDetailPage extends StatelessWidget {
@@ -214,6 +216,27 @@ class HotelDetailPage extends StatelessWidget {
                       ),
                       const SizedBox(
                         height: 8,
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: 200,
+                        child: FlutterMap(
+                          options: MapOptions(
+                            initialZoom: 15,
+                            interactionOptions: InteractionOptions(
+                                flags: InteractiveFlag.all &
+                                    ~InteractiveFlag.rotate),
+                            initialCenter: LatLng(hotel.location.latitude,
+                                hotel.location.longitude),
+                          ),
+                          children: [
+                            TileLayer(
+                              urlTemplate:
+                                  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                              userAgentPackageName: 'com.v.hoteli',
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
