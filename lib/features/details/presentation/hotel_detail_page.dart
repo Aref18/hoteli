@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:hoteli/core/utils/network.dart';
+import 'package:hoteli/features/details/presentation/fullscreen_image_shower.dart';
 import 'package:hoteli/features/details/presentation/fullscreen_map.dart';
 import 'package:hoteli/features/home/data/models/hotel.dart';
 import 'package:hoteli/features/home/data/repositories/hotel_repositories.dart';
@@ -40,7 +41,14 @@ class HotelDetailPage extends StatelessWidget {
                       fit: BoxFit.cover,
                       networkUrl(hotel.images.first),
                     ),
-                    onLongPress: () {},
+                    onLongPress: () {
+                      PersistentNavBarNavigator.pushNewScreen(context,
+                          screen: FullscreenImageShower(
+                              UrlImage: hotel.images.first),
+                          withNavBar: false,
+                          pageTransitionAnimation:
+                              PageTransitionAnimation.cupertino);
+                    },
                   ),
                 ),
                 elevation: 8,
@@ -163,6 +171,17 @@ class HotelDetailPage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return Row(
                               children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    PersistentNavBarNavigator.pushNewScreen(
+                                        context,
+                                        screen: FullscreenImageShower(
+                                            UrlImage: hotel.images[index]),
+                                        withNavBar: false,
+                                        pageTransitionAnimation:
+                                            PageTransitionAnimation.cupertino);
+                                  },
+                                ),
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(12),
                                   child: Image.network(
