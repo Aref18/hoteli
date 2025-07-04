@@ -7,27 +7,35 @@ class FavaroteItemProvider extends ChangeNotifier {
   FavaroteItemProvider(this._hotelRepositories) {
     fetchHotels();
   }
+
   final List<String> _favaroteHotelsId = [];
-  List<Hotel> get favoriteHotelList =>
-      _hotels.where((hotel) => _favaroteHotelsId.contains(hotel.id)).toList();
   List<Hotel> _hotels = [];
 
-  fetchHotels() async {
+  /// گرفتن فقط هتل‌هایی که مورد علاقه هستند
+  List<Hotel> get favoriteHotelList =>
+      _hotels.where((hotel) => _favaroteHotelsId.contains(hotel.id)).toList();
+
+  /// گرفتن لیست کامل هتل‌ها
+  List<Hotel> get allHotels => _hotels;
+
+  /// گرفتن داده هتل‌ها از رپازیتوری
+  Future<void> fetchHotels() async {
     _hotels = await _hotelRepositories.fetchHotel();
-    notifyListeners();
+    notifyListeners(); // بروزرسانی UI بعد از دریافت هتل‌ها
   }
 
-  bool isFavarote(String hotel) {
-    return _favaroteHotelsId.contains(hotel);
+  /// بررسی اینکه آیا یک هتل مورد علاقه است یا نه
+  bool isFavarote(String hotelId) {
+    return _favaroteHotelsId.contains(hotelId);
   }
 
-  void toggleHotels(String hotel) {
-    if (_favaroteHotelsId.contains(hotel)) {
-      _favaroteHotelsId.remove(hotel);
+  /// افزودن یا حذف کردن هتل از لیست مورد علاقه
+  void toggleHotels(String hotelId) {
+    if (_favaroteHotelsId.contains(hotelId)) {
+      _favaroteHotelsId.remove(hotelId);
     } else {
-      (_favaroteHotelsId.add(hotel));
+      _favaroteHotelsId.add(hotelId);
     }
+    notifyListeners(); // اینجا خیلی مهمه
   }
-
-  notifyListeners();
 }
