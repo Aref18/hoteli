@@ -52,7 +52,7 @@ void main() async {
         ),
         ChangeNotifierProvider(
           create: (_) => BookingProvider(),
-        )
+        ),
       ],
       child: const Hoteli(),
     ),
