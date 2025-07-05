@@ -31,7 +31,7 @@ class HotelVerticalList extends StatelessWidget {
                   hotel: hotels[index], title: title, hotels: hotels),
             );
           },
-        )
+        ),
       ],
     );
   }

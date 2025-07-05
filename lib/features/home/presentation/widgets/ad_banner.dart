@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AdBanner extends StatelessWidget {
-  const AdBanner({super.key});
+  const AdBanner({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: Theme.of(context).colorScheme.primaryFixed,
@@ -32,7 +34,7 @@ class AdBanner extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.right,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Text(
@@ -44,11 +46,11 @@ class AdBanner extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w500),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 ElevatedButton(
-                  child: Text("همه هتل ها"),
+                  child: const Text("همه هتل ها"),
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -58,7 +60,7 @@ class AdBanner extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
               ],

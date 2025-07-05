@@ -87,7 +87,6 @@ class HotelCardVertical extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        // Text("${hotel.bedType.count} ${hotel.bedType.type}"),
                         Text(
                           "${hotel.bedType.details}",
                           textDirection: TextDirection.rtl,
