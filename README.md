@@ -1,6 +1,6 @@
 # hoteli
 
-![Hoteli Demo](https://raw.githubusercontent.com/Aref18/hoteli/main/hoteli.gif)
+![Hoteli Demo](https://raw.githubusercontent.com/Aref18/hoteli/main/ho.gif)
 
 Hoteli – A Clean Architecture Hotel Booking App with Provider
 
