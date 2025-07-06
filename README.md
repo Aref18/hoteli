@@ -2,21 +2,23 @@
 ![Hoteli Demo](https://raw.githubusercontent.com/Aref18/hoteli/main/hoteli.gif)
 
 
-Hoteli – A Clean Architecture Hotel Booking App with Provider
+Hoteli – A Clean Architecture Hotel Booking App with Provider and FVM
 
-Hoteli is a modern hotel booking application built using Flutter, Provider for state management, and Clean Architecture principles. Developed individually, the app enables users to easily search for hotels, like/favorite their preferred places, and switch between Dark and Light themes for a personalized experience.
+Hoteli is a modern hotel booking app built using Flutter, with Provider for state management, Clean Architecture principles, and FVM (Flutter Version Manager) for managing Flutter SDK versions. Developed individually, it features powerful search, like/favorite functionality, and supports Dark and Light themes for a personalized experience.
 
 ✨ Features:
-🔍 Smart search functionality to quickly find hotels
+🔍 Smart search to quickly find hotels
 
-❤️ Like/favorite system to save preferred hotels
+❤️ Like/favorite system for preferred hotels
 
 🌗 Toggle between Dark and Light themes
 
-🧱 Built using Clean Architecture for scalability and maintainability
+🧱 Built using Clean Architecture for scalability
 
-🧩 Uses Provider for clean and reactive state management
+🧩 Uses Provider for clean state management
 
-📱 Built with Flutter for a smooth and modern mobile experience
+⚙️ Managed Flutter SDK versions using FVM for consistent builds
 
-Hoteli is designed for simplicity, speed, and clarity — both in UI and code.
+📱 Smooth and responsive UI with Flutter
+
+Hoteli offers a clean, maintainable codebase optimized for quality and scalability.
