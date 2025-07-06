@@ -1,5 +1,7 @@
 # hoteli
 
+https://raw.githubusercontent.com/Aref18/hoteli/main/hoteli.gif
+
 Hoteli – A Clean Architecture Hotel Booking App with Provider
 
 Hoteli is a modern hotel booking application built using Flutter, Provider for state management, and Clean Architecture principles. Developed individually, the app enables users to easily search for hotels, like/favorite their preferred places, and switch between Dark and Light themes for a personalized experience.
