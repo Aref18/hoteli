@@ -1,16 +1,18 @@
 # hoteli
 
-A new Flutter project.
+oteli – A Clean Architecture Hotel Booking App
 
-## Getting Started
+Hoteli is a modern hotel booking application built using Flutter and Clean Architecture principles. Designed and developed independently, this app allows users to search for hotels, like their favorite places, and switch between Dark and Light themes for an optimal user experience.
 
-This project is a starting point for a Flutter application.
+✨ Features:
+🔍 Powerful search functionality to easily find hotels
 
-A few resources to get you started if this is your first Flutter project:
+❤️ Ability to like/favorite hotels for quick access
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🌗 Dark and Light mode toggle support
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🧱 Structured using Clean Architecture for scalability and maintainability
+
+📱 Built with Flutter for smooth and responsive UI on Android devices
+
+Hoteli is a lightweight, elegant solution for discovering and booking hotels with a clean codebase and professional design.
